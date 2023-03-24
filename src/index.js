@@ -7,22 +7,19 @@ const dialogtoken = process.env.DIALOG_TOKEN
 
 
 try {
-    // O polling serve para sempre ficar  pingando no 
-    // servidor do telegram e conseguir receber e tranferir informações
-    // Podemos fazer esse tipo de ping por meio do webHook
+    
     const bot = new TelegramBot(dialogtoken, { polling: true })
 
     bot.on('message', async function (msg) {
+
         const chatId = msg.chat.id
-        console.log(msg.text)
 
         const dfResponse = await dialogflow.sendMessage(chatId.toString(), msg.text)
 
-        let responseText = dfResponse.text;
+        let responseText = dfResponse.text
 
-        if (dfResponse === "Treino especifico") {
-
-            responseText = await youtube.searchYoutube(responseText, dfResponse.fileds.corpo.stringValue)
+        if (dfResponse.intent === "Treino especifico") {
+            responseText = await youtube.searchYoutube(responseText, dfResponse.fields.Corpo.stringValue)
         }
 
         bot.sendMessage(chatId, responseText)

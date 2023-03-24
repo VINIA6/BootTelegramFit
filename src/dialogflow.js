@@ -1,7 +1,5 @@
 const dialogflow = require("dialogflow")
 const configs = require("./vinia6fitbot-rotd-2135c4eddf16.json")
-// const uuid = require("uuid")
-
 
 const sessionClient = new dialogflow.SessionsClient({
     projectId: configs.project_id,
@@ -16,6 +14,7 @@ const sessionClient = new dialogflow.SessionsClient({
 async function sendMessage(id, message) {
     
     const sessionPath = sessionClient.sessionPath(configs.project_id, id)
+
     const request = {
         session: sessionPath,
         queryInput: {
@@ -27,16 +26,14 @@ async function sendMessage(id, message) {
     }
 
     const responses = await sessionClient.detectIntent(request)
+
     const result = responses[0].queryResult
+    
     return {
         text: result.fulfillmentText,
         intent: result.intent.displayName,
         fields: result.parameters.fields
     }
 }
-
-
-// const sessionId = uuid.v4();
-// sendMessage(sessionId, 'Oi')
 
 module.exports.sendMessage = sendMessage
