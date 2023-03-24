@@ -9,15 +9,21 @@ Nos tempos atuais alinhar o bem estar físico com as ferramentas de pesquisa é 
 
 ## :rocket: CHALLENGES
 
-<img src="https://github.com/VINIA6/VINIA6/blob/master/b4.png">
+A construção em JS da comunicação entre todas as APIS, foi o maior desafio encontrado, saber lidar com a API do telegram, requisitar e encaminhar mensagens, fazer a disposição dos conteúdos das frases no dialog flow. Mas graças as API'S, que estão bem documentadas tive uma certa facilidade em entender e montar a lógica da construção. Abaixo temos a lógica de disponibilidade dos arquivos e como eles conversam, para que o chat boot funcione. 
 
-<p>
-
-</p>
+<img src="https://github.com/VINIA6/BotTelgram/blob/master/img_readme/API%20DIALOG.png" width="400" height="200">
 
 ## :closed_lock_with_key: API'S
+
 <p>
+Nas plataformas disponibilizadas para manipulação de desenvolvedores, sempre necessita de token's e permissão de acessos em sua conta google, abaixo temos alguns links que vão ajudar a geração dos token's necessários e outras configurações a mais.
 </p>
+
+####  <a href="https://help.blip.ai/hc/pt-br/articles/4993476117399-Como-configurar-o-Dialogflow-como-seu-provedor-de-IA"> 1. Como configurar o Dialogflow como seu provedor de IA</a>
+
+#### <a href="https://www.npmjs.com/package/node-telegram-bot-api"> 2. Telegram Boot API  </a>
+
+#### <a href="https://developers.google.com/youtube/v3/quickstart/nodejs?hl=pt-br"> 3. Como configurar o Youtube API - Token</a>
 
 
 ## 📦 STACK
